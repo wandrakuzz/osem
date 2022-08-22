@@ -17,4 +17,14 @@ class Pastry extends Model
         'ppu',
         'image'
     ];
+
+    public function batters()
+    {
+        return $this->hasMany(Batter::class,'pastry_id');
+    }
+
+    public function toppings()
+    {
+        return $this->hasMany(Topping::class,'pastry_id');
+    }
 }

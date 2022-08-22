@@ -12,8 +12,13 @@ class Batter extends Model
     protected $fillable = [
 
         'id',
-        'parent_id',
+        'pastry_id',
         'batter_id',
         'type'
     ];
+
+    public function pastry()
+    {
+        return $this->belongsTo(Pastry::class);
+    }
 }
